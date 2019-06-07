@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: neo4j_pedestrian
+    container_name: neo4j-pedestrian
+    volumes:
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/import:/import
+    ports:
+      - 7474:7474
+      - 7687:7687
